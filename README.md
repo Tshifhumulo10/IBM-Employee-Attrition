@@ -2,8 +2,8 @@
 
 **FILES IN THE REPOSITORY**
 
-**IBM Employee Attrition:** A notebook consisting of EDA and Modelling.
+**IBM Employee Attrition:** Is a notebook consisting of EDA and Modelling.
 
-**best_model.pkl:**  A pickled file containing the best model with an accuracy of 88%
+**best_model.pkl:**  Is a pickled file containing the logistic regression model that has already being trained. 
 
-**Attrition_Class.pkl:**  A pickled class that contains of two functions. the first one is the predictions function which Predicts the attrition of the given data. Also have a Count function which counts the number of attrition of the given data 
+**Attrition_Class.pkl:** Is a pickled class that consists of two functions, the predictions function which Predicts the attrition of the given data and  Count function which counts the number of attrition of the given data 
