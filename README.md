@@ -1,13 +1,8 @@
 # IBM EMPLOYEE ATTRITION
 
+Employees leave companies due to various reasons including but not limited to unsatisfactory pay, poor workplace conditions, poor work-life balance, illness, death and relocation. In this project, IBM data was used in order to analysis the varies factor that causes attrition. Furthermore, a model was build in order to predict the Attrition of the test data. 
 
-
-
-
-
-
-
-# FILES IN THE REPOSITORY
+# Files in the repository
 
 **IBM Employee Attrition:** Is a notebook consisting of EDA and Modelling.
 
