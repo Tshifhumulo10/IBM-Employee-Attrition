@@ -6,10 +6,4 @@ In the dynamic landscape of modern businesses, the departure of employees, known
 
 In my ambitious undertaking, I delve into the realm of human resources analytics to explore the multifaceted nature of employee attrition. Leveraging the rich and comprehensive IBM data, I embarked on a transformative journey of insight discovery and prediction. My aim is twofold: first, to gain a profound understanding of the underlying factors that contribute to attrition within organizations, and second, to develop a powerful predictive model capable of forecasting attrition patterns with remarkable accuracy.
 
-# Files in the repository
 
-**IBM Employee Attrition:** A notebook consisting of EDA and Modelling.
-
-**IBM Attrition:** A CSV file of the data used for this project.
-
-**best_model.pkl:**  A pickled logistic regression model that has already been trained. 
