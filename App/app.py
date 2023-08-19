@@ -14,6 +14,8 @@ import pickle
 # Save the model to a file using pickle
 with open('model.pickle', 'rb') as file:
     loaded_model = pickle.load(file)
+with open('enc.pickle', 'rb') as file:
+    load_encoder= pickle.load(file)
 page =  page = st.sidebar.radio("Select Page", ["Overview", "Prediction", "Insights"])
 
 
@@ -65,6 +67,13 @@ elif page == "Prediction":
     st.sidebar.header('Input parameters')
     def input_values():
         global data
+        Gender=st.sidebar.selectbox('Gender', ('Female', 'Male'))
+        MaritalStatus=st.sidebar.selectbox('MaritalStatus', ('Single', 'Married', 'Divorced'))
+        BusinessTravel=st.sidebar.selectbox('BusinessTravel',('Travel_Rarely', 'Travel_Frequently', 'Non-Travel'))
+        Department =st.sidebar.selectbox('Department',('Sales', 'Research & Development', 'Human Resources'))
+        EducationField=st.sidebar.selectbox('EducationField',('Life Sciences', 'Other', 'Medical', 'Marketing','Technical Degree', 'Human Resources' ))
+        JobRole=st.sidebar.selectbox('JobRole', ('Sales Executive', 'Research Scientist', 'Laboratory Technician','Manufacturing Director', 'Healthcare Representative', 'Manager','Sales Representative', 'Research Director', 'Human Resources'))
+        OverTime=st.sidebar.selectbox('OverTime', ('Yes', 'No'))
         Age= st.sidebar.slider('Age', int(data.Age.min()), int(data.Age.max()), int(data.Age.mean()))
         DailyRate= st.sidebar.slider('DailyRate', int(data.DailyRate.min()), int(data.DailyRate.max()), int(data.DailyRate.mean()))
         DistanceFromHome=st.sidebar.slider('DistanceFromHome', int(data.DistanceFromHome.min()), int(data.DistanceFromHome.max()), int(data.DistanceFromHome.mean()))
@@ -83,13 +92,6 @@ elif page == "Prediction":
         WorkLifeBalance=st.sidebar.slider('WorkLifeBalance', int(data.WorkLifeBalance.min()), int(data.WorkLifeBalance.max()), int(data.WorkLifeBalance.mean()))
         YearsInCurrentRole=st.sidebar.slider('YearsInCurrentRole', int(data.YearsInCurrentRole.min()), int(data.YearsInCurrentRole.max()), int(data.YearsInCurrentRole.mean()))
         YearsSinceLastPromotion=st.sidebar.slider('YearsSinceLastPromotion', int(data.YearsSinceLastPromotion.min()), int(data.YearsSinceLastPromotion.max()), int(data.YearsSinceLastPromotion.mean()))
-        BusinessTravel=st.sidebar.slider('BusinessTravel', int(data.BusinessTravel.min()), int(data.BusinessTravel.max()), int(data.BusinessTravel.mean()))
-        Department =st.sidebar.slider('Department',int(data.Department.min()), int(data.Department.max()), int(data.Department.mean()))
-        EducationField=st.sidebar.slider('EducationField', int(data.EducationField.min()), int(data.EducationField.max()), int(data.EducationField.mean()))
-        Gender=st.sidebar.slider('Gender', int(data.Gender.min()), int(data.Gender.max()), int(data.Gender.mean()))
-        JobRole=st.sidebar.slider('JobRole', int(data.JobRole.min()),int(data.JobRole.max()), int(data.JobRole.mean()))
-        OverTime=st.sidebar.slider('OverTime', int(data.OverTime.min()), int(data.OverTime.max()), int(data.OverTime.mean()))
-        MaritalStatus=st.sidebar.slider('MaritalStatus', int(data.MaritalStatus.min()), int(data.MaritalStatus.max()), int(data.MaritalStatus.mean()))
         df= {'Age': Age,
             'BusinessTravel': BusinessTravel, 
             'DailyRate': DailyRate,
@@ -119,11 +121,16 @@ elif page == "Prediction":
         return features
     Df=input_values()
 
+    st.header('Upload data for predictions')
+    Data_up =st.file_uploader('Upload CSV using the format of the specified parameters below')
+    st.write('---')
 
     st.header('Specified Input Parameters')
     st.write(Df)
     st.write('---')
-    
+
+    Df[['BusinessTravel','Department','EducationField', 'Gender', 'JobRole', 'MaritalStatus', 'OverTime']]= load_encoder.fit_transform(Df[['BusinessTravel','Department','EducationField', 'Gender', 'JobRole', 'MaritalStatus', 'OverTime']])
+
     st.header('Predictions')
     if loaded_model.predict(Df) == 1:
         st.write('The employee is predicted to leave the company  \U0001F625')
