@@ -16,7 +16,7 @@ with open('model.pickle', 'rb') as file:
     loaded_model = pickle.load(file)
 with open('enc.pickle', 'rb') as file:
     load_encoder= pickle.load(file)
-page =  page = st.sidebar.radio("Select Page", ["Overview", "Prediction", "Insights"])
+page = st.sidebar.radio("Select Page", ["Overview", "Prediction", "Insights"])
 
 
 if page == "Overview":
