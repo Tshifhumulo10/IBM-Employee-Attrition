@@ -9,13 +9,13 @@ In my ambitious undertaking, I delve into the realm of human resources analytics
 
 # Link to the data
 
-[Website] (https://www.kaggle.com/code/rohitsahoo/ibm-employee-attrition-analysis-and-prediction/input)
+[Website](https://www.kaggle.com/code/rohitsahoo/ibm-employee-attrition-analysis-and-prediction/input)
 
 # Documents 
 
-1. Notebook
-2. Training data
-3. Testing data
+1. Notebook 
+2. Train data
+3. Test data
 
 <a id="cont"></a>
 # Notebook content
