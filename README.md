@@ -8,22 +8,15 @@ In the dynamic landscape of modern businesses, the departure of employees, known
 In my ambitious undertaking, I delve into the realm of human resources analytics to explore the multifaceted nature of employee attrition. Leveraging the rich and comprehensive IBM data, I embarked on a transformative journey of insight discovery and prediction. My aim is twofold: first, to gain a profound understanding of the underlying factors that contribute to attrition within organizations, and second, to develop a powerful predictive model capable of forecasting attrition patterns with remarkable accuracy.
 
 <a id="cont"></a>
-# Table of content
+# Notebook content
 
-<a href=#one>1. Objectives</a> 
-
-<a href=#two>2. Importing Libraries</a>
-
-<a href=#three>3. Data Collection</a>
-
-<a href=#four>4. Exploratory data Analysis</a>
-
-<a href=#five>5. Feature Engineering</a>
-
-<a href=#six>6. modeling</a>
-
-<a href=#seven>7. Model review</a>
-
-<a href=#eight>8. Predicting on Test data</a>
+1. Objectives
+2. Importing Libraries
+3. Data Collection
+4. Exploratory data Analysis
+5. Feature Engineering
+6. modeling
+7. Model review
+8. Predicting on Test data
 
 
